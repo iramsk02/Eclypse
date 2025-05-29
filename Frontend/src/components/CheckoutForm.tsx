@@ -111,7 +111,7 @@ const CheckoutForm = () => {
   useEffect(() => {
     const fetchCart = async () => {
       try {
-        const response = await axios.get(`http://localhost:5000/api/cart/get/${userId}`);
+        const response = await axios.get(`https://eclypse-backend-5li2.onrender.com/api/cart/get/${userId}`);
         const data = response.data.cart;
         console.log(data)
         setCart(data);

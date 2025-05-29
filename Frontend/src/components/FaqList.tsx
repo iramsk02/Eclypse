@@ -8,7 +8,7 @@ const FaqList: React.FC = () => {
 
   useEffect(() => {
     const fetchFaqs = async () => {
-      const res = await axios.get("http://localhost:5000/api/faqs");
+      const res = await axios.get("https://eclypse-backend-5li2.onrender.com/api/faqs");
       setFaqs(res.data.data);
     };
     fetchFaqs();

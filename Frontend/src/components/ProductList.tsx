@@ -10,7 +10,7 @@ const ProductList: React.FC = () => {
 
   useEffect(() => {
    const get_products = async () => {
-            const res = await axios.get<Product[]>("http://localhost:5000/api/products");
+            const res = await axios.get<Product[]>("https://eclypse-backend-5li2.onrender.com/api/products");
             const data = res.data.data;
             // console.log(data.data)
             setProducts(data)

@@ -1,8 +1,11 @@
 import mongoose from 'mongoose';
-
+import dotenv from "dotenv"
+dotenv.config()
+import { MONGO_URI } from './config';
 const connectDB = async (): Promise<void> => {
   try {
-    const conn = await mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost:27017/eclypse');
+    const conn = await mongoose.connect(process.env.MONGO_URI ||MONGO_URI );
+    console.log(process.env.MONGO_URI)
     console.log(`MongoDB Connected: ${conn.connection.host}`);
   } catch (error) {
     console.error('Database connection error:', error);

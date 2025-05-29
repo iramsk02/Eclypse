@@ -33,7 +33,7 @@ const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
 
  const addToCart = async () => {
     try {
-      const res = await axios.post('http://localhost:5000/api/cart/add', {
+      const res = await axios.post('https://eclypse-backend-5li2.onrender.com/api/cart/add', {
         userId:"user123",
         productId: product._id,
         quantity: 1,

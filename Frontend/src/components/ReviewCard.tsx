@@ -168,7 +168,7 @@ const ReviewsContainer = () => {
 
                 //   useEffect(() => {
                 //     const fetchFaqs = async () => {
-                const res = await axios.get("http://localhost:5000/api/reviews");
+                const res = await axios.get("https://eclypse-backend-5li2.onrender.com/api/reviews");
                 console.log(res.data)
                 setReviews(res.data.data);
                 //     };

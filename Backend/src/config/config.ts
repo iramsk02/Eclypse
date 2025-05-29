@@ -1,0 +1,2 @@
+// export const MONGO_URI="mongodb+srv://bitsbe:6M-peAin-xUr33u@cluster0.amo5o.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0"
+export const MONGO_URI="mongodb+srv://bitsbe:6M-peAin-xUr33u@cluster0.amo5o.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0"

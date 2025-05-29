@@ -12,7 +12,7 @@ const ProductPage = () => {
   const [product, setProduct] = useState<Product | null>(null);
 
   useEffect(() => {
-    axios.get(`http://localhost:5000/api/products/${id}`)
+    axios.get(`https://eclypse-backend-5li2.onrender.com/api/products/${id}`)
       .then(res => setProduct(res.data))
       .catch(err => console.error("Product fetch error", err));
   }, [id]);
