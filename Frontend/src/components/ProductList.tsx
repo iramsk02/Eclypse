@@ -13,7 +13,7 @@ const ProductList: React.FC = () => {
             const res = await axios.get<Product[]>("https://eclypse-backend-5li2.onrender.com/api/products");
             //@ts-ignore
             const data = res.data.data;
-            // console.log(data.data)
+            console.log(data)
             setProducts(data)
 
         }

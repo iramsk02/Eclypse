@@ -27,14 +27,14 @@ import { toast } from "react-toastify";
 import { useNavigate } from "react-router-dom";
 
 const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
-  const navigate=useNavigate()
+  const navigate = useNavigate()
 
   const [selectedSize, setSelectedSize] = useState<string>('M');
 
- const addToCart = async () => {
+  const addToCart = async () => {
     try {
       const res = await axios.post('https://eclypse-backend-5li2.onrender.com/api/cart/add', {
-        userId:"user123",
+        userId: "user123",
         productId: product._id,
         quantity: 1,
       });
@@ -75,6 +75,7 @@ const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
               className="w-24 h-36 object-cover border border-gray-600"
             />
           ))}
+         
         </div>
 
         {/* Price */}
@@ -102,8 +103,8 @@ const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
               key={size}
               onClick={() => setSelectedSize(size)}
               className={`px-4 py-2 rounded-lg border font-medium transition-colors ${selectedSize === size
-                  ? 'border-black bg-gray-100 text-black'
-                  : 'border-gray-300 bg-black text-white hover:border-gray-400'
+                ? 'border-black bg-gray-100 text-black'
+                : 'border-gray-300 bg-black text-white hover:border-gray-400'
                 }`}
             >
               {size}
@@ -116,7 +117,7 @@ const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
           <button onClick={addToCart} className="flex-1 px-6 py-3 bg-white text-black font-semibold rounded hover:bg-gray-200">
             Add to Cart
           </button>
-          <button onClick={()=>navigate("/checkout")} className="flex-1 px-6 py-3 bg-black text-white border border-white font-semibold rounded hover:bg-white hover:text-black">
+          <button onClick={() => navigate("/checkout")} className="flex-1 px-6 py-3 bg-black text-white border border-white font-semibold rounded hover:bg-white hover:text-black">
             Buy
           </button>
         </div>

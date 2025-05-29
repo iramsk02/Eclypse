@@ -83,6 +83,7 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 // import { Heading1 } from "lucide-react";
 import { toast } from "react-toastify";
+import Navbar from "./Navbar";
 
 interface Product {
   _id: string;
@@ -142,8 +143,9 @@ const CheckoutForm = () => {
     return(<h1>Nothing in Cart</h1>)
   }
 
-  return (
+  return (<>      <Navbar/>
     <div className="bg-white text-black p-8 max-w-4xl mx-auto my-10 rounded">
+    
       <h2 className="text-2xl font-bold mb-6">Shipping Address</h2>
       <form className="grid grid-cols-2 gap-4">
         <input className="p-3 border" placeholder="First Name" />
@@ -178,7 +180,7 @@ const CheckoutForm = () => {
         </div>
         <div className="flex justify-between">
           <span>Shipping</span>
-          <span>₹ {subTotal!=0?shipping.toFixed(2):"0.00"}</span>
+          <span>₹ {shipping.toFixed(2)}</span>
         </div>
         <div className="flex justify-between">
           <span>Tax</span>
@@ -186,13 +188,15 @@ const CheckoutForm = () => {
         </div>
         <div className="flex justify-between font-bold mt-2">
           <span>Total</span>
-          <span>₹ {subTotal!=0?total.toFixed(2):"0.00"}</span>
+          <span>₹ {total.toFixed(2)}</span>
         </div>
         <button onClick={placeOrder} className="mt-4 p-3 bg-black text-white w-full hover:opacity-90">
           Place Order
         </button >
       </div>
     </div>
+    </>
+
   );
 };
 
