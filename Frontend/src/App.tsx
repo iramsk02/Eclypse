@@ -30,6 +30,7 @@ import {  Routes, Route } from "react-router-dom";
 import HomePage from "./Pages/Home";
 import CheckoutPage from "./Pages/Checkout";
 import { ToastContainer } from "react-toastify";
+import ErrorPage from "./Pages/Error";
 
 function App() {
   return (
@@ -48,6 +49,7 @@ function App() {
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/checkout" element={<CheckoutPage />} />
+        <Route path="*" element={<ErrorPage/>} />
       </Routes>
     </div>
   );
