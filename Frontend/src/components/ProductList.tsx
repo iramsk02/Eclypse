@@ -11,6 +11,7 @@ const ProductList: React.FC = () => {
   useEffect(() => {
    const get_products = async () => {
             const res = await axios.get<Product[]>("https://eclypse-backend-5li2.onrender.com/api/products");
+            //@ts-ignore
             const data = res.data.data;
             // console.log(data.data)
             setProducts(data)
@@ -23,7 +24,7 @@ const ProductList: React.FC = () => {
   
     <section className="flex flex-col gap-8 p-8 bg-black">
   {products.map(product => (
-    <ProductCard key={product.id} product={product} />
+    <ProductCard key={product._id} product={product} />
   ))}
 </section>
 

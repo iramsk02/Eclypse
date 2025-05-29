@@ -178,7 +178,7 @@ const CheckoutForm = () => {
         </div>
         <div className="flex justify-between">
           <span>Shipping</span>
-          <span>₹ {subTotal!=0?shipping.toFixed(2):""}</span>
+          <span>₹ {subTotal!=0?shipping.toFixed(2):"0.00"}</span>
         </div>
         <div className="flex justify-between">
           <span>Tax</span>
@@ -186,7 +186,7 @@ const CheckoutForm = () => {
         </div>
         <div className="flex justify-between font-bold mt-2">
           <span>Total</span>
-          <span>₹ {subTotal!=0?total.toFixed(2):""}</span>
+          <span>₹ {subTotal!=0?total.toFixed(2):"0.00"}</span>
         </div>
         <button onClick={placeOrder} className="mt-4 p-3 bg-black text-white w-full hover:opacity-90">
           Place Order

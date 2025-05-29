@@ -11,6 +11,7 @@ const ProductGrid = () => {
     useEffect(() => {
         const get_products = async () => {
             const res = await axios.get<Product[]>("https://eclypse-backend-5li2.onrender.com/api/products");
+            //@ts-ignore
             const data = res.data.data;
             // console.log(data.data)
             setProducts(data)
@@ -22,7 +23,7 @@ const ProductGrid = () => {
     return (
         <section className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 p-8 bg-black">
       {products.map(product => (
-        <ProductCard key={product.id} product={product} />
+        <ProductCard key={product._id} product={product} />
       ))}
     </section>
     );
