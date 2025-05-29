@@ -26,7 +26,7 @@
 // }
 
 // export default App
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import {  Routes, Route } from "react-router-dom";
 import HomePage from "./Pages/Home";
 import CheckoutPage from "./Pages/Checkout";
 import { ToastContainer } from "react-toastify";
